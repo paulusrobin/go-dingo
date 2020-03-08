@@ -3,9 +3,8 @@
   "namespace": "github.com/paulusrobin",
   "domains": [
     {
-      "name": "",
+      "name": "system-parameter",
       "application": {
-        "initialize": true,
         "repository": {
           "initialize": true,
           "functions": [
@@ -71,7 +70,6 @@
         ]
       },
       "infrastructure": {
-        "initialize": true,
         "http": {
           "initialize": true,
           "functions": [
