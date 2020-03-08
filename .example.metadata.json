@@ -1,0 +1,117 @@
+{
+  "project": "system-parameter",
+  "namespace": "github.com/paulusrobin",
+  "domains": [
+    {
+      "name": "",
+      "application": {
+        "initialize": true,
+        "repository": {
+          "initialize": true,
+          "functions": [
+            {
+              "name": "CreateSystemParameter",
+              "dto": "CreateSystemParameter"
+            },
+            {
+              "name": "GetSystemParameter",
+              "dto": "GetSystemParameter"
+            },
+            {
+              "name": "UpdateSystemParameter",
+              "dto": "UpdateSystemParameter"
+            },
+            {
+              "name": "DeleteSystemParameter",
+              "dto": "DeleteSystemParameter"
+            }
+          ]
+        },
+        "service": {
+          "initialize": true,
+          "functions": [
+            {
+              "name": "CreateSystemParameter",
+              "dto": "CreateSystemParameter"
+            },
+            {
+              "name": "GetSystemParameter",
+              "dto": "GetSystemParameter"
+            },
+            {
+              "name": "UpdateSystemParameter",
+              "dto": "UpdateSystemParameter"
+            },
+            {
+              "name": "DeleteSystemParameter",
+              "dto": "DeleteSystemParameter"
+            }
+          ]
+        }
+      },
+      "interface": {
+        "initialize": true,
+        "functions": [
+          {
+            "name": "CreateSystemParameter",
+            "dto": "CreateSystemParameter"
+          },
+          {
+            "name": "GetSystemParameter",
+            "dto": "GetSystemParameter"
+          },
+          {
+            "name": "UpdateSystemParameter",
+            "dto": "UpdateSystemParameter"
+          },
+          {
+            "name": "DeleteSystemParameter",
+            "dto": "DeleteSystemParameter"
+          }
+        ]
+      },
+      "infrastructure": {
+        "initialize": true,
+        "http": {
+          "initialize": true,
+          "functions": [
+            {
+              "method": "POST",
+              "routes": "/system-parameter",
+              "name": "CreateSystemParameter",
+              "dto": "CreateSystemParameter"
+            },
+            {
+              "method": "GET",
+              "routes": "/system-parameter/:id",
+              "name": "GetSystemParameter",
+              "dto": "GetSystemParameter"
+            },
+            {
+              "method": "PUT",
+              "routes": "/system-parameter/:id",
+              "name": "UpdateSystemParameter",
+              "dto": "UpdateSystemParameter"
+            },
+            {
+              "method": "DELETE",
+              "routes": "/system-parameter/:id",
+              "name": "DeleteSystemParameter",
+              "dto": "DeleteSystemParameter"
+            }
+          ]
+        },
+        "messaging": {
+          "initialize": true,
+          "functions": [
+            {
+              "name": "ListenSystemParameter",
+              "dto": "ListenSystemParameter",
+              "topic": "com.github.paulusrobin.system-parameter"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
