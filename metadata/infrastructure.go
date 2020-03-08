@@ -2,7 +2,6 @@ package metadata
 
 type (
 	Infrastructure struct {
-		Initialize bool           `json:"initialize"`
 		Http       InfraHttp      `json:"http"`
 		Messaging  InfraMessaging `json:"messaging"`
 	}

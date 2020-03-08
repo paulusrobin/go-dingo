@@ -2,7 +2,6 @@ package metadata
 
 type (
 	Application struct {
-		Initialize bool       `json:"initialize"`
 		Repository Repository `json:"repository"`
 		Service    Service    `json:"service"`
 	}
