@@ -29,13 +29,15 @@ func (p project) Run() error {
 		return err
 	}
 
-	// - Generate Project File
-	// TODO: Generate Project File
-
 	// - Generate .metadata.json file
-	return p.metadata.Save(p.project)
+	if err = p.metadata.Save(p.project); err != nil {
+		return err
+	}
+
+	// - Generate Project File
+	return p.metadata.Render(p.project)
 }
 
-func NewProject(namespace, projectName string) app.App {
+func New(namespace, projectName string) app.App {
 	return &project{namespace: namespace, project: projectName}
 }

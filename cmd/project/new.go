@@ -1,4 +1,4 @@
-package cmd
+package project
 
 import (
 	"github.com/paulusrobin/go-dingo/app/project"
@@ -6,8 +6,8 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-func init() {
-	cmd := &cli.Command{
+func New() *cli.Command {
+	return &cli.Command{
 		Name:        "init",
 		Usage:       "generate new dingo project",
 		Description: "generate new dingo project",
@@ -30,9 +30,7 @@ func init() {
 
 			namespace := ctx.String(shared.Namespace)
 			projectName := ctx.String(shared.Project)
-			return project.NewProject(namespace, projectName).Run()
+			return project.New(namespace, projectName).Run()
 		},
 	}
-
-	Commands = append(Commands, cmd)
 }
