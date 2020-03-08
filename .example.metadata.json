@@ -113,5 +113,44 @@
         }
       }
     }
+  ],
+  "utility": [
+    {
+      "name": "echo",
+      "import": "github.com/labstack/echo/v4",
+      "import_as": "echo",
+      "provider_func": "func NewEcho(logger *echokit.LoggerWrapper, validator validator.Validator) (*echo.Echo, error) {\n          e := echo.New()\n          e.Use(middleware.Recover())\n          e.Logger = logger\n          e.Validator = validator\n          return e, nil\n        }",
+      "external_dependencies": [
+        {
+          "import": "github.com/labstack/echo/v4",
+          "import_as": "echo"
+        },
+        {
+          "import": "github.com/labstack/echo/v4/middleware",
+          "import_as": "middleware"
+        },
+        {
+          "import": "github.com/tiket/TIX-HOTEL-UTILITIES-GO/util/echokit",
+          "import_as": "echokit"
+        },
+        {
+          "import": "github.com/tiket/TIX-HOTEL-UTILITIES-GO/util/validator",
+          "import_as": "validator"
+        }
+      ],
+      "mod_dependencies": [
+        "echo-logger-wrapper",
+        "validator"
+      ],
+      "config": [
+        {
+          "key": "EchoServerPort",
+          "type": "int",
+          "value": "9000",
+          "struct_tag": "envconfig:\"ECHO_SERVER_PORT\" default:\"9000\"",
+          "env_key": "ECHO_SERVER_PORT"
+        }
+      ]
+    }
   ]
 }
