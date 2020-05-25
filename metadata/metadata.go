@@ -2,7 +2,6 @@ package metadata
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/iancoleman/strcase"
 	"github.com/paulusrobin/go-dingo/shared"
 	"github.com/pkg/errors"
@@ -46,26 +45,6 @@ func (m *Metadata) Load(path string) error {
 	return nil
 }
 
-func (m Metadata) Render(path string) error {
-	for packageName, files := range shared.Structures {
-		if err := shared.Mkdir(path + "/" + packageName); err != nil {
-			return err
-		}
-
-		for _, file := range files {
-			templatePath := fmt.Sprintf("%s.tmpl", file)
-			pathToRender := fmt.Sprintf("%s/%s/%s", path, packageName, file)
-			if err := shared.RenderFromTemplate(templatePath, pathToRender, shared.RenderDto{
-				PackageName:         packageName,
-				StrippedPackageName: shared.GetStrippedPackageName(packageName),
-			}); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
 func NewMetadata(namespace, project string) (Metadata, error) {
 	if len(namespace) == 0 {
 		return Metadata{}, errors.New(`namespace can't be blank`)
@@ -77,7 +56,7 @@ func NewMetadata(namespace, project string) (Metadata, error) {
 	namespace = strings.ToLower(strings.Replace(namespace, " ", "", -1))
 	project = strings.ToLower(strcase.ToKebab(project))
 	return Metadata{
-		Version:   "0.0.0-1",
+		Version:   "v0.0.0",
 		Namespace: namespace,
 		Project:   project,
 		Domains:   make([]Domain, 0),

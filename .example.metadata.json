@@ -1,6 +1,7 @@
 {
   "project": "system-parameter",
   "namespace": "github.com/paulusrobin",
+  "version": "v1.0.0",
   "domains": [
     {
       "name": "system-parameter",
@@ -106,6 +107,16 @@
               "name": "ListenSystemParameter",
               "dto": "ListenSystemParameter",
               "topic": "com.github.paulusrobin.system-parameter"
+            }
+          ]
+        },
+        "worker": {
+          "initialize": true,
+          "functions": [
+            {
+              "name": "WorkerSystemParameter",
+              "dto": "WorkerSystemParameter",
+              "duration": "30s"
             }
           ]
         }

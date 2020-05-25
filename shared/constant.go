@@ -8,12 +8,11 @@ const (
 	Infrastructures      = "infrastructures"
 	ExternalDependencies = "external-dependencies"
 	Shared               = "shared"
-	SharedConfig         = "shared/config"
-	SharedDto            = "shared/dto"
+	Config               = "shared/config"
 
-	Config    = "config.go"
-	Injection = "di.go"
-	Holder    = "holder.go"
+	FileConfig    = "config.go"
+	FileInjection = "di.go"
+	FileHolder    = "holder.go"
 )
 
 var RequiredPrograms = []string{"go"}

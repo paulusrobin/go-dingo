@@ -8,13 +8,12 @@ import (
 
 var (
 	Structures = map[string][]string{
-		Applications:         {Injection, Holder},
-		Interfaces:           {Injection, Holder},
-		Infrastructures:      {Injection, Holder},
-		ExternalDependencies: {Injection},
-		Shared:               {Injection, Holder},
-		SharedConfig:         {Config},
-		SharedDto:            {},
+		Applications:         {FileInjection, FileHolder},
+		Interfaces:           {FileInjection, FileHolder},
+		Infrastructures:      {FileInjection, FileHolder},
+		ExternalDependencies: {FileInjection},
+		Shared:               {FileInjection, FileHolder},
+		Config:               {FileConfig},
 	}
 )
 

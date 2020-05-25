@@ -35,7 +35,8 @@ func (p project) Run() error {
 	}
 
 	// - Generate Project File
-	return p.metadata.Render(p.project)
+	// TODO: Generate Project Folders and Files
+	return nil
 }
 
 func New(namespace, projectName string) app.App {

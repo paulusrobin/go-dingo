@@ -16,4 +16,9 @@ type (
 		Func
 		Topic string `json:"topic"`
 	}
+
+	WorkerFunc struct {
+		Func
+		Duration string `json:"duration"`
+	}
 )
