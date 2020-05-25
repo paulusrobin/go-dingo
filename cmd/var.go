@@ -22,6 +22,7 @@ func init() {
 			Subcommands: []*cli.Command{
 				domain.Init(),
 				domain.AddFunc(),
+				domain.ExposeFunc(),
 			},
 		},
 	)
