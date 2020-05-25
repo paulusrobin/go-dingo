@@ -32,9 +32,8 @@ func (m Metadata) Save(path string) error {
 	return nil
 }
 
-func (m *Metadata) Load(path string) error {
-	path = path + "/.metadata.json"
-	data, err := ioutil.ReadFile(path)
+func (m *Metadata) Load() error {
+	data, err := ioutil.ReadFile(".metadata.json")
 	if err != nil {
 		return errors.Wrap(err, "could not read metadata.json")
 	}

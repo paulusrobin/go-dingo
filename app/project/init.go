@@ -39,6 +39,6 @@ func (p project) Run() error {
 	return nil
 }
 
-func New(namespace, projectName string) app.App {
+func Init(namespace, projectName string) app.App {
 	return &project{namespace: namespace, project: projectName}
 }
